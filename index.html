@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joy & Omole - Wedding Invitation</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #f5f5f5 0%, #e8e8e8 100%);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Header Section */
+        .header {
+            text-align: center;
+            background: linear-gradient(135deg, #800020 0%, #a0002a 100%);
+            color: white;
+            padding: 60px 20px;
+            margin-bottom: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(128, 0, 32, 0.3);
+        }
+
+        .couple-names {
+            font-size: 3.5em;
+            font-weight: bold;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .wedding-date {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+            opacity: 0.9;
+        }
+
+        .ornament {
+            font-size: 2em;
+            color: #d4af37;
+            margin: 20px 0;
+        }
+
+        /* Countdown Section */
+        .countdown-section {
+            background: white;
+            padding: 40px 20px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            margin-bottom: 40px;
+            text-align: center;
+            border: 2px solid #666;
+        }
+
+        .countdown-title {
+            font-size: 2em;
+            color: #800020;
+            margin-bottom: 30px;
+        }
+
+        .countdown {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .countdown-item {
+            background: #666;
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            min-width: 100px;
+            text-align: center;
+        }
+
+        .countdown-number {
+            font-size: 2.5em;
+            font-weight: bold;
+            display: block;
+        }
+
+        .countdown-label {
+            font-size: 0.9em;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Gallery Section */
+        .gallery-section {
+            margin-bottom: 40px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5em;
+            color: #800020;
+            margin-bottom: 30px;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .gallery-item {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+
+        /* RSVP Section */
+        .rsvp-section {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            margin-bottom: 40px;
+            border: 2px solid #800020;
+        }
+
+        .rsvp-title {
+            text-align: center;
+            font-size: 2.5em;
+            color: #800020;
+            margin-bottom: 30px;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #666;
+        }
+
+        .form-group input[type="text"],
+        .form-group input[type="tel"] {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            font-size: 1em;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input[type="text"]:focus,
+        .form-group input[type="tel"]:focus {
+            outline: none;
+            border-color: #800020;
+        }
+
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 25px;
+        }
+
+        .checkbox-group input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            accent-color: #800020;
+        }
+
+        .submit-btn {
+            background: linear-gradient(135deg, #800020 0%, #a0002a 100%);
+            color: white;
+            padding: 15px 40px;
+            border: none;
+            border-radius: 25px;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(128, 0, 32, 0.3);
+        }
+
+        /* Support Section */
+        .support-section {
+            background: #666;
+            color: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .support-title {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        .account-info {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+
+        .account-number {
+            font-size: 1.5em;
+            font-weight: bold;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+        }
+
+        .bank-name {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .couple-names {
+                font-size: 2.5em;
+            }
+
+            .countdown {
+                gap: 15px;
+            }
+
+            .countdown-item {
+                min-width: 80px;
+                padding: 15px;
+            }
+
+            .countdown-number {
+                font-size: 2em;
+            }
+
+            .carousel-container {
+                margin: 0 10px;
+            }
+
+            .carousel-slide img {
+                height: 250px;
+            }
+
+            .carousel-nav {
+                width: 40px;
+                height: 40px;
+                font-size: 1.2em;
+            }
+
+            .carousel-prev {
+                left: 10px;
+            }
+
+            .carousel-next {
+                right: 10px;
+            }
+
+            .rsvp-section {
+                padding: 20px;
+            }
+
+            .section-title {
+                font-size: 2em;
+            }
+
+            .support-section {
+                padding: 20px;
+            }
+        }
+
+        /* Animation */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .modal {
+            display: none;
+            /* hidden by default */
+            position: fixed;
+            z-index: 9999;
+            inset: 0;
+            background: rgba(160, 0, 42, 0.3);
+            backdrop-filter: blur(5px);
+            /* display: flex; */
+            align-items: center;
+            justify-content: center;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .modal.show {
+            display: flex;
+            /* only show when JS adds .show */
+        }
+
+        /* Modal content box */
+        .modal-content {
+            background: #f5f5f5;
+            padding: 2rem;
+            border-radius: 12px;
+            width: 90%;
+            max-width: 400px;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            animation: slideUp 0.3s ease;
+            position: relative;
+        }
+
+        /* Success styling */
+        .modal-content.success {
+            border-top: 6px solid #800020;
+            color: #333;
+        }
+
+        /* Error styling */
+        .modal-content.error {
+            border-top: 6px solid oklch(44.697% 0.17923 18.753);
+            background: #e8e8e8;
+            color: #800020;
+        }
+
+        /* Close button */
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 14px;
+            font-size: 1.5rem;
+            color: #800020;
+            cursor: pointer;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideUp {
+            from {
+                transform: translateY(40px);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .spinner {
+            width: 40px;
+            height: 40px;
+            border: 4px solid #e8e8e8;
+            border-top: 4px solid #800020;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 1rem;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .modal-content.loader {
+            border-top: none;
+            background: #f5f5f5;
+            color: #800020;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Header Section -->
+        <div class="header fade-in">
+            <img style="width: 100%;" src="./Wedding invitation card.jpg" alt="">
+            <!-- <div class="ornament">❦</div>
+            <h1 class="couple-names">Joy & Abimbola</h1>
+            <p class="wedding-date">October 18th, 2025</p>
+            <div class="ornament">❦</div>
+            <p>You're Invited to Celebrate Our Special Day</p> -->
+        </div>
+
+        <!-- Countdown Section -->
+        <div class="countdown-section fade-in">
+            <h2 class="countdown-title">Countdown to Our Wedding</h2>
+            <div class="countdown" id="countdown">
+                <div class="countdown-item">
+                    <span class="countdown-number" id="days">0</span>
+                    <span class="countdown-label">Days</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-number" id="hours">0</span>
+                    <span class="countdown-label">Hours</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-number" id="minutes">0</span>
+                    <span class="countdown-label">Minutes</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-number" id="seconds">0</span>
+                    <span class="countdown-label">Seconds</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Gallery Section -->
+        <div class="gallery-section fade-in">
+            <h2 class="section-title">Our Journey</h2>
+            <div class="gallery">
+                <div class="gallery-item">
+                    <img src="./Image (5).jpg" alt="Couple photo 1">
+                </div>
+                <div class="gallery-item">
+                    <img src="./Image (3).jpg" alt="Couple photo 2">
+                </div>
+                <div class="gallery-item">
+                    <img src="./Image.jpg" alt="Couple photo 3">
+                </div>
+                <div class="gallery-item">
+                    <img src="./Image (2).jpg" alt="Couple photo 4">
+                </div>
+                <div class="gallery-item">
+                    <img src="./Image (1).jpg" alt="Couple photo 5">
+                </div>
+            </div>
+        </div>
+
+        <!-- RSVP Section -->
+        <div class="rsvp-section fade-in">
+            <h2 class="rsvp-title">RSVP</h2>
+            <form id="rsvpForm">
+                <div class="form-group">
+                    <label for="fullName">Full name *</label>
+                    <input type="text" id="fullName" placeholder="Enter your fullname" name="fullName" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="whatsapp">WhatsApp number *</label>
+                    <input type="tel" maxlength="11" id="whatsapp" name="whatsapp"
+                        placeholder="Enter your whatsapp Number" required>
+                </div>
+
+                <div class="checkbox-group">
+                    <input type="checkbox" id="plusOne" name="plusOne">
+                    <label for="plusOne">I'm bringing someone special with me</label>
+                </div>
+
+                <button type="submit" class="submit-btn">Send RSVP</button>
+            </form>
+        </div>
+
+        <!-- Support Section -->
+        <div class="support-section fade-in">
+            <h2 class="support-title">Support this event</h2>
+            <p>Your presence is the greatest gift, but if you wish to contribute to this event, you can
+                send your love and support to:</p>
+
+            <div class="account-info">
+                <div class="account-number">200-0295-253</div>
+                <div class="bank-name">Zenith Bank</div>
+                <p style="margin-top: 10px; opacity: 0.8;">Account Name: Alexius O. Iduh</p>
+            </div>
+        </div>
+    </div>
+    <div id="successModal" class="modal">
+        <div class="modal-content success">
+            <span class="close-btn" onclick="closeModal('successModal')">&times;</span>
+            <h2>🎉 Thank you!</h2>
+            <p>Your RSVP has been received.<br>We can’t wait to see you on <strong>October 18th</strong>.</p>
+        </div>
+    </div>
+
+    <!-- Error Modal -->
+    <div id="errorModal" class="modal">
+        <div class="modal-content error">
+            <span class="close-btn" onclick="closeModal('errorModal')">&times;</span>
+            <h2>⚠️ Oops!</h2>
+            <p id="errorMessage">Something went wrong. Please try again.</p>
+        </div>
+    </div>
+
+    <div id="loaderModal" class="modal">
+        <div class="modal-content loader">
+            <div class="spinner"></div>
+            <p>Sending your RSVP...</p>
+        </div>
+    </div>
+
+    <script>
+
+        function openModal(id, message = null) {
+            const modal = document.getElementById(id);
+            if (id === "errorModal" && message) {
+                document.getElementById("errorMessage").textContent = message;
+            }
+            modal.classList.add("show");
+        }
+
+        function closeModal(id) {
+            const modal = document.getElementById(id);
+            modal.classList.remove("show");
+        }
+        // Countdown Timer
+        document.addEventListener('DOMContentLoaded', () => {
+            const form = document.getElementById('rsvpForm');
+            const submitBtn = form.querySelector('button[type="submit"]');
+
+            form.addEventListener('submit', async (event) => {
+                event.preventDefault();
+                const fullname = document.getElementById('fullName').value.trim();
+                const number = document.getElementById('whatsapp').value.trim();
+                const comingWithGuest = document.getElementById('plusOne').checked;
+
+                if (!fullname || !number) {
+                    alert("Please fill in all required fields.");
+                    return;
+                }
+
+
+                const phoneRegex = /^\d{11}$/;
+                if (!phoneRegex.test(number)) {
+                    alert("Please enter an 11-digit phone number (no spaces or +).");
+                    return;
+                }
+
+                const payload = { fullname, number, comingWithGuest };
+                try {
+                    // 🔹 show loader modal
+                    openModal("loaderModal");
+
+                    // 🔹 create a timeout promise
+                    const timeoutPromise = new Promise((_, reject) =>
+                        setTimeout(() => reject(new Error("Request timed out after 25 seconds")), 25000)
+                    );
+
+                    // 🔹 race between fetch and timeout
+                    const response = await Promise.race([
+                        fetch("https://zinter-coming-soon-api.onrender.com/api/v1/register", {
+                            method: "POST",
+                            headers: { "Content-Type": "application/json" },
+                            body: JSON.stringify(payload),
+                        }),
+                        timeoutPromise,
+                    ]);
+
+                    console.log("HTTP status:", response.status, "ok:", response.ok);
+
+                    let result = null;
+                    try {
+                        result = await response.json();
+                    } catch (e) {
+                        console.warn("Response not JSON", e);
+                    }
+
+                    console.log("API response:", result);
+
+                    // 🔹 hide loader
+                    closeModal("loaderModal");
+
+                    if (!response.ok) {
+                        openModal(
+                            "errorModal",
+                            (result && result.message) || `Server error: ${response.status}`
+                        );
+                    } else {
+                        if (result && result.status) {
+                            openModal("successModal");
+                            form.reset();
+                        } else {
+                            openModal("errorModal", (result && result.message) || "Something went wrong.");
+                        }
+                    }
+                } catch (error) {
+                    console.error("Error:", error);
+                    closeModal("loaderModal"); // hide loader if it was showing
+                    openModal("errorModal", error.message || "Network error, please try again later.");
+                }
+
+            });
+        });
+
+        function updateCountdown() {
+            const weddingDate = new Date('October 18, 2025 10:00:00').getTime();
+            const now = new Date().getTime();
+            const distance = weddingDate - now;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById('days').textContent = days;
+            document.getElementById('hours').textContent = hours;
+            document.getElementById('minutes').textContent = minutes;
+            document.getElementById('seconds').textContent = seconds;
+
+            if (distance < 0) {
+                document.getElementById('countdown').innerHTML = "<h3 style='color: #800020; font-size: 2em;'>The Wedding Day is Here! 🎉</h3>";
+            }
+        }
+
+        // Update countdown every second
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
+
+
+        // Add animation on scroll
+        function animateOnScroll() {
+            const elements = document.querySelectorAll('.fade-in');
+            elements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 150;
+
+                if (elementTop < window.innerHeight - elementVisible) {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                }
+            });
+        }
+
+        window.addEventListener('scroll', animateOnScroll);
+        animateOnScroll(); // Run once on load
+    </script>
+</body>
+
+</html>
