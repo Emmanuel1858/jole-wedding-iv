@@ -191,7 +191,7 @@
             width: 20px;
             height: 20px;
             accent-color: #800020;
-            
+
         }
 
         .submit-btn {
@@ -585,9 +585,10 @@
                     openModal("loaderModal");
 
                     // 🔹 create a timeout promise
-                    // const timeoutPromise = new Promise((_, reject) =>
-                    //     setTimeout(() => reject(new Error("Request timed out after 25 seconds")), 25000)
-                    // );
+                    const timeoutPromise = new Promise((_, reject) =>
+                        setTimeout(() => reject(new Error("Request timed out after 2 minutes")), 120000)
+                    );
+
 
                     // 🔹 race between fetch and timeout
                     const response = await Promise.race([
