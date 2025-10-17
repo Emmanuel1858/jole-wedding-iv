@@ -526,6 +526,18 @@
         </div>
     </div>
 
+    <div id="closedModal" class="modal">
+        <div class="modal-content success">
+            <!-- <span class="close-btn" onclick="closeModal('successModal')">&times;</span> -->
+            <h2>Registration is closed</h2>
+            <p>Thank you everyone for your time.<br>
+                See you there. 💖</p>
+
+
+
+        </div>
+    </div>
+
     <!-- Error Modal -->
     <div id="errorModal" class="modal">
         <div class="modal-content error">
@@ -552,10 +564,14 @@
             modal.classList.add("show");
         }
 
+
         function closeModal(id) {
             const modal = document.getElementById(id);
             modal.classList.remove("show");
         }
+
+
+        openModal("closedModal");
         // Countdown Timer
         document.addEventListener('DOMContentLoaded', () => {
             const form = document.getElementById('rsvpForm');
